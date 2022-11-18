@@ -1,6 +1,6 @@
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
-
+import pytest
 
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
@@ -18,3 +18,6 @@ def test_guest_can_go_to_login_page(browser):
     login = LoginPage(browser, link)
     login.open
     login.should_be_login_form()
+
+if __name__ == '__main__':
+    pytest.main()
