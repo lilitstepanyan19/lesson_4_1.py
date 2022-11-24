@@ -22,25 +22,16 @@ class ProductPage(BasePage):
     def product_price_message_to_match_added_basket_price(self):
         product_price = self.browser.find_element(*BasketPriceLocators.PRODUCT_PRICE).text
         added_basket_price = self.browser.find_element(*BasketPriceLocators.ADDED_BASKET_PRICE).text
-        def basket_price(arg):
-            x = ''
-            for el in arg:
-                if el.isdigit():
-                    x += el
-                    print(x)
-            print(x)
-            return x
-        product_price_int = int(basket_price(product_price))
-        added_basket_price_int = int(basket_price(added_basket_price))
-        print(product_price_int)
-        print(added_basket_price_int)
+        
+        assert product_price == added_basket_price, 'Something went wrong'
 
-        assert product_price_int == added_basket_price_int, 'Something went wrong'
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductLocators.PRODUCT_NAME_MSG), \
+            "Success message is presented, but should not be"
 
-
-
-
-
+    def should_not_be_disappeared(self):
+            assert self.is_disappeared(*ProductLocators.PRODUCT_NAME_MSG), \
+                "Success message is presented, but should not be"
 
 
 

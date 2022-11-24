@@ -16,6 +16,6 @@ class ProductLocators():
     ADDED_PRODUCT_NAME = (By.CSS_SELECTOR, '.alertinner>strong')
 
 class BasketPriceLocators():
-    BASKET_PRICE_MSG = (By.CSS_SELECTOR, 'alertinner>p')
+    BASKET_PRICE_MSG = (By.CSS_SELECTOR, '.alertinner>p')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main>p')
-    ADDED_BASKET_PRICE = (By.CSS_SELECTOR, 'alertinner>p>strong')
+    ADDED_BASKET_PRICE = (By.CSS_SELECTOR, '.alertinner>p>strong')

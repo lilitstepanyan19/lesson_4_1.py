@@ -12,6 +12,7 @@ def test_guest_can_go_to_login_page(browser):
 
     login = LoginPage(browser, browser.current_url)
     login.open()
+    login.should_be_login_url()
     login.should_be_login_form()
     login.should_be_register_form()
 
