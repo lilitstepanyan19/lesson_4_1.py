@@ -9,7 +9,7 @@ class BasePage():
     def __init__(self, browser, url):
         self.browser = browser
         self.url = url
-        self.browser.implicitly_wait(5)
+        # self.browser.implicitly_wait(5)
 
     def open(self):
         self.browser.get(self.url)
@@ -22,7 +22,7 @@ class BasePage():
         return True
 
     def solve_quiz_and_get_code(self):
-        time.sleep(2)
+        # time.sleep(2)
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
@@ -52,3 +52,7 @@ class BasePage():
             return False
 
         return True
+
+    def go_to_basket(self, how, what):
+        btn_basket = self.browser.find_element(how, what)
+        btn_basket.click()
