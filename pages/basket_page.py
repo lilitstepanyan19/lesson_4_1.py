@@ -6,13 +6,13 @@ class BasketPage(BasePage):
         self.go_to_basket(*BasketPageLocators.BTN_BASKET)
 
     def no_product_in_basket(self):
-        assert self.is_element_present(*BasketPageLocators.NO_PTODUCT), 'There is product in basket'
+        assert self.is_element_present(*BasketPageLocators.NO_PTODUCT), 'Product in basket'
 
     def no_product_in_basket_msg(self):
         assert self.is_element_present(*BasketPageLocators.NO_PRODUCT_MSG), 'No message that basket is empty'
 
     def should_see_no_product_in_basket(self):
-        assert self.is_not_element_present(*BasketPageLocators.NO_PTODUCT), 'There is not product in basket'
+        assert self.is_not_element_present(*BasketPageLocators.NO_PTODUCT), 'No product in basket'
 
     def should_see_no_product_in_basket_msg(self):
-        assert self.is_not_element_present(*BasketPageLocators.NO_PRODUCT_MSG), 'Was message that basket is empty'
+        assert self.is_not_element_present(*BasketPageLocators.NO_PRODUCT_MSG), 'Basket is empty'
