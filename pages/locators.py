@@ -9,7 +9,7 @@ class LoginPageLocators():
     USER_EMAIL = (By.CSS_SELECTOR, '#id_registration-email')
     USER_PASS = (By.CSS_SELECTOR, '#id_registration-password1')
     USER_PASS_REPEAT = (By.CSS_SELECTOR, '#id_registration-password2')
-    REGISTR_BTN = (By.CSS_SELECTOR, '#id_registration-redirect_url')
+    REGISTR_BTN = (By.XPATH, '//button[@name="registration_submit"]')
 
 class BasketLocators():
     ADD_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
